@@ -5,22 +5,22 @@ use TodoPago\Sdk;
 include_once '../../vendor/autoload.php';
 
 //común a todas los métodos
-$http_header = array('Authorization'=>'TODOPAGO 0129b065cfb744718166913eba827a2f',
+$http_header = array('Authorization'=>'TODOPAGO 7d668363c52c443eac510e459afe8dc8',
  'user_agent' => 'PHPSoapClient');
 
 $operationid = rand(1,100000000);
 
 //opciones para el método sendAuthorizeRequest
 $optionsSAR_comercio = array (
-	'Security'=>'0129b065cfb744718166913eba827a2f',
+	'Security'=>'7d668363c52c443eac510e459afe8dc8',
 	'EncodingMethod'=>'XML',
-	'Merchant'=>35,
+	'Merchant'=>16068,
 	'URL_OK'=>"http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].str_replace ($_SERVER['DOCUMENT_ROOT'], '', dirname($_SERVER['SCRIPT_FILENAME']))."/exito.php?operationid=$operationid",
 	'URL_ERROR'=>"http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].str_replace ($_SERVER['DOCUMENT_ROOT'], '', dirname($_SERVER['SCRIPT_FILENAME']))."/error.php?operationid=$operationid"
 );
 
 $optionsSAR_operacion = array (
-	'MERCHANT'=> "35",
+	'MERCHANT'=> "16068",
 	'OPERATIONID'=>"01",
 	'CURRENCYCODE'=> 032,
 	'AMOUNT'=>"54"
@@ -29,16 +29,16 @@ $optionsSAR_operacion = array (
 //opciones para el método getAuthorizeAnswer
 $optionsGAA = array(	
 	'Security' => '0129b065cfb744718166913eba827a2f', 
-	'Merchant' => "35",
+	'Merchant' => "16068",
 	'RequestKey' => '8496472a-8c87-e35b-dcf2-94d5e31eb12f',
 	'AnswerKey' => '8496472a-8c87-e35b-dcf2-94d5e31eb12f'
 	);
 	
 //opciones para el método getAllPaymentMethods
-$optionsGAMP = array("MERCHANT"=>35);
+$optionsGAMP = array("MERCHANT"=>16068);
 	
 //opciones para el método getStatus 
-$optionsGS = array('MERCHANT'=>'35', 'OPERATIONID'=>'141120084707');
+$optionsGS = array('MERCHANT'=>'16068', 'OPERATIONID'=>'141120084707');
 	
 //creo instancia de la clase TodoPago
 $connector = new Sdk($http_header,"test");
