@@ -6,14 +6,14 @@ include_once '../../vendor/autoload.php';
 
 
 //común a todas los métodos
-$http_header = array('Authorization'=>'TODOPAGO 0129b065cfb744718166913eba827a2f',
+$http_header = array('Authorization'=>'TODOPAGO 7d668363c52c443eac510e459afe8dc8',
  'user_agent' => 'PHPSoapClient');
 
 //datos constantes
 define('CURRENCYCODE', 032);
-define('MERCHANT', 35);
+define('MERCHANT', 16068);
 define('ENCODINGMETHOD', 'XML');
-define('SECURITY', '0129b065cfb744718166913eba827a2f');
+define('SECURITY', '7d668363c52c443eac510e459afe8dc8');
 
 //id de la operacion
 $operationid = rand(0, 99999999);
